@@ -35,7 +35,7 @@ namespace AsteroidsGame
         /// <summary>
         ///  event Die starship
         /// </summary>
-        public static event Message MessageDie;
+        public static event Message MessageDie;  //+
 
         /// <summary>
         ///  событие потеря энергии кораблем
