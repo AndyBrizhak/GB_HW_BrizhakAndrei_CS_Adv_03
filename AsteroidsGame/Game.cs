@@ -194,6 +194,26 @@ namespace AsteroidsGame
                 if (_ship.Energy <= 0) _ship?.Die();                    //+
             }
 
+            for (var i = 0; i < _healthpacks.Length; i++)    //+
+            {
+                if (_healthpacks[i] == null) continue;    //+
+                _healthpacks[i].Update();                 //+
+//                if (_bullet != null && _bullet.Collision(_asteroids[i])) //+
+//                {
+//                    _bullet.MessageDestroyed();
+//                    System.Media.SystemSounds.Hand.Play();              //+
+//                    _asteroids[i] = null;                               //+
+//                    _bullet = null;
+//                    continue;                                           //+
+//                }
+                if (_ship.Collision(_healthpacks[i])) continue;
+                _ship.LEnergy();
+                var rnd = new Random();                                 //+
+                _ship?.EnergyHigh(rnd.Next(1, 10));                      //+
+                System.Media.SystemSounds.Asterisk.Play();              //+    
+                /*if (_ship.Energy <= 0) _ship?.Die(); */                   //+
+            }
+
 
         }
 
