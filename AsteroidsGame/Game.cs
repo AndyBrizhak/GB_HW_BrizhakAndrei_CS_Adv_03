@@ -52,6 +52,8 @@ namespace AsteroidsGame
         /// </summary>
         private static Ship _ship = new Ship(new Point(10, 400), new Point(5, 5), new Size(10, 10));
 
+        private static Healthpack[] _healthpacks;
+
         static Game()
         {
         }
