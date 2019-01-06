@@ -62,34 +62,18 @@ namespace AsteroidsGame
         /// <param name="form"></param>
         public static void Init(Form form)
         {
-
-
-
-            // Графическое устройство для вывода графики
             Graphics g;
-            // предоставляет доступ к главному буферу графического контекста для текущего приложения
             _context = BufferedGraphicsManager.Current;
-            g = form.CreateGraphics(); // Создаём объект - поверхность рисования и связываем его с формой
-            // Запоминаем размеры формы
+            g = form.CreateGraphics();
             Width = form.Width;
             Height = form.Height;
-
-            //  Задача 4 ДЗ Проверка на задание размера экрана. Если высота или ширина(Width,
-            //      Height) больше 1000 или принимает отрицательное значение, то выбросить исключение
-            //  ArgumentOutOfRangeException().
             CheckSizeScreen(Width, Height);
-
-            // Связываем буфер в памяти с графическим объектом.
-            // для того, чтобы рисовать в буфере
             Buffer = _context.Allocate(g, new Rectangle(0, 0, Width, Height));
             Load();
             _timer.Start();
             _timer.Tick += Timer_Tick;
-          
-
-            //учет нажатия на клавишы+
             form.KeyDown += Form_KeyDown;
-
+            Ship.MessageDie += Finish;
         }
 
         //private static void NewMethod()
@@ -245,7 +229,7 @@ namespace AsteroidsGame
         /// <summary>
         /// Метод завершение игры
         /// </summary>
-        public static void   //+
+        public static void Finish()  //+
         {
 //            Console.WriteLine("The End");
             _timer.Stop();
