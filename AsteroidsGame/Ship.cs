@@ -33,7 +33,7 @@ namespace AsteroidsGame
         
 
         /// <summary>
-        ///  event Die starship
+        ///  event (делегат) Гибель корабля
         /// </summary>
         public static event Message MessageDie;  //+
 
@@ -115,7 +115,7 @@ namespace AsteroidsGame
         public void Die()
         {
             MessageDie?.Invoke();   //+
-            //            Console.WriteLine("Starship died!");
+            Console.WriteLine("Starship died!"); // Вывод сообщения в консоль
         }
 
     }

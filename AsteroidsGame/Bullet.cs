@@ -12,6 +12,12 @@ namespace AsteroidsGame
         public Bullet(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
         }
+
+        /// <summary>
+        /// Событие уничтожение Bullet
+        /// </summary>
+        public static event Message MessageBulletDestroyed;  
+
         public override void Draw()
         {
             Game.Buffer.Graphics.DrawRectangle(Pens.OrangeRed, Pos.X, Pos.Y, Size.Width, Size.Height);
