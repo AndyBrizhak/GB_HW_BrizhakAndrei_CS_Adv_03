@@ -86,7 +86,8 @@ namespace AsteroidsGame
             _timer.Start();
             _timer.Tick += Timer_Tick;
             //NewMethod();
-            //учет нажатия на клавишы
+
+            //учет нажатия на клавишы+
             form.KeyDown += Form_KeyDown;
 
         }
