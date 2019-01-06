@@ -74,6 +74,7 @@ namespace AsteroidsGame
             _timer.Tick += Timer_Tick;
             form.KeyDown += Form_KeyDown;
             Ship.MessageDie += Finish;
+            Bullet.MessageBulletDestroyed += BulletMessageDestroyed;
         }
 
         //private static void NewMethod()
@@ -194,9 +195,10 @@ namespace AsteroidsGame
                 _asteroids[i].Update();                 //+
                 if (_bullet != null && _bullet.Collision(_asteroids[i])) //+
                 {
+                    _bullet.MessageDestroyed();
                     System.Media.SystemSounds.Hand.Play();              //+
                     _asteroids[i] = null;                               //+
-                    _bullet = null;                                     //+    
+                    _bullet = null;
                     continue;                                           //+
                 }
                 if (!_ship.Collision(_asteroids[i])) continue;          //+
@@ -231,7 +233,7 @@ namespace AsteroidsGame
         /// </summary>
         public static void Finish()  //+
         {
-//            Console.WriteLine("The End");
+            Console.WriteLine("The End");
             _timer.Stop();
             Buffer.Graphics.DrawString("The End", new Font(FontFamily.GenericSansSerif, 60,
                 FontStyle.Underline), Brushes.White, 200, 100);
@@ -239,7 +241,13 @@ namespace AsteroidsGame
         }
 
 
-
+        /// <summary>
+        /// Метод вывода сообщения о разрушении пули
+        /// </summary>
+        public static  void BulletMessageDestroyed()
+        {
+             Console.WriteLine("Bullet Destroyed!");  //выводим сообщение в консоль
+        }
 
     }
 }

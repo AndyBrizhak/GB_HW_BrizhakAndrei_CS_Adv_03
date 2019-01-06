@@ -41,7 +41,7 @@ namespace AsteroidsGame
         public void MessageDestroyed()    
         {
             MessageBulletDestroyed?.Invoke(); // Когда пуля разрушается вызываем это событие
-            Console.WriteLine("Bullet Destroyed!");  //выводим сообщение в консоль
+           // Console.WriteLine("Bullet Destroyed!");  //выводим сообщение в консоль
         }
 
         /// <summary>
