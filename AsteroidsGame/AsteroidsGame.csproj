@@ -51,6 +51,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="ICloneable.cs" />
     <Compile Include="ICollision.cs" />
+    <Compile Include="Planet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
