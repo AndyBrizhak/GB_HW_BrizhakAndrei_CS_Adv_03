@@ -16,7 +16,7 @@ namespace AsteroidsGame
 
         public override void Draw()
         {
-            Game.Buffer.Graphics.FillRectangle(Brushes.GreenYellow, Pos.X, Pos.Y, Size.Width, Size.Height);
+            Game.Buffer.Graphics.FillEllipse(Brushes.GreenYellow, Pos.X, Pos.Y, Size.Width, Size.Height);
         }
     }
 }
