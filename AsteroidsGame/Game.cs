@@ -129,7 +129,7 @@ namespace AsteroidsGame
         /// <summary>
         /// вывод графики
         /// </summary>
-        public static void Draw()
+        public static void Draw() //+
         {
             // Проверяем вывод графики
             // Buffer.Graphics.Clear(Color.Black);
