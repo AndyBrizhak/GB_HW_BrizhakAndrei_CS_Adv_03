@@ -14,19 +14,35 @@ namespace AsteroidsGame
         }
 
         /// <summary>
-        /// Событие уничтожение Bullet
+        /// Событие (делегат) уничтожение Bullet
         /// </summary>
         public static event Message MessageBulletDestroyed;  
 
+        /// <summary>
+        /// Прорисовка пули
+        /// </summary>
         public override void Draw()
         {
             Game.Buffer.Graphics.DrawRectangle(Pens.OrangeRed, Pos.X, Pos.Y, Size.Width, Size.Height);
         }
+
+        /// <summary>
+        /// Движение пули
+        /// </summary>
         public override void Update()
         {
             Pos.X = Pos.X + 3;
         }
 
+
+        /// <summary>
+        /// Разрушение пули
+        /// </summary>
+        public void Destroyed()    
+        {
+            MessageBulletDestroyed?.Invoke(); // Когда пуля разрушается вызываем это событие
+            Console.WriteLine("Bullet Destroyed!");  //выводим сообщение в консоль
+        }
 
         /// <summary>
         /// при столкновении перенести положение снаряда на левый кран экрана
