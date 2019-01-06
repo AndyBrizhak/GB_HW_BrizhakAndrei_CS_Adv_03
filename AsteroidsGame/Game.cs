@@ -74,7 +74,8 @@ namespace AsteroidsGame
             _timer.Tick += Timer_Tick;
             form.KeyDown += Form_KeyDown;
             Ship.MessageDie += Finish;
-            Bullet.MessageBulletDestroyed += BulletMessageDestroyed;
+            Bullet.MessageBulletDestroyed += Bullet.ShowMessageBulletDestroyed; 
+
         }
 
         /// <summary>
@@ -207,13 +208,13 @@ namespace AsteroidsGame
         }
 
 
-        /// <summary>
-        /// Метод вывода сообщения о разрушении пули
-        /// </summary>
-        public static  void BulletMessageDestroyed()
-        {
-             Console.WriteLine("Bullet Destroyed!");  
-        }
+//        /// <summary>
+//        /// Метод вывода сообщения о разрушении пули
+//        /// </summary>
+//        public static  void BulletMessageDestroyed()
+//        {
+//             Console.WriteLine("Bullet Destroyed!");  
+//        }
 
     }
 }

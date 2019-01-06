@@ -51,6 +51,14 @@ namespace AsteroidsGame
         {
             Pos.X = 0;
         }
+
+        /// <summary>
+        /// Вывод сообщения в консоль о разрушении пули
+        /// </summary>
+        public static void ShowMessageBulletDestroyed()  
+        {
+            Console.WriteLine("Bullet destoeyd");
+        }
     }
 }
 
