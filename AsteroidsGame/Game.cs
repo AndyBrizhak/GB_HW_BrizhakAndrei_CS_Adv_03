@@ -48,7 +48,7 @@ namespace AsteroidsGame
         private static Asteroid[] _asteroids;
 
         /// <summary>
-        /// статитческий обьект Корабль
+        /// статитческий обьект Корабль +
         /// </summary>
         private static Ship _ship = new Ship(new Point(10, 400), new Point(5, 5), new Size(10, 10));
 
