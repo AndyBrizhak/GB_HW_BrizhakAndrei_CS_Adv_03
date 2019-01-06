@@ -28,4 +28,4 @@ namespace AsteroidsGame
             Application.Run(form);
         }
     }
-}}
+}
