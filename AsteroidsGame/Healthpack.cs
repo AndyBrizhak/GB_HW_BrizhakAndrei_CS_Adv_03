@@ -13,5 +13,10 @@ namespace AsteroidsGame
         {
             Power = -10;
         }
+
+        public override void Draw()
+        {
+            Game.Buffer.Graphics.FillRectangle(Brushes.GreenYellow, Pos.X, Pos.Y, Size.Width, Size.Height);
+        }
     }
 }
