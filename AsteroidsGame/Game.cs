@@ -143,12 +143,22 @@ namespace AsteroidsGame
                 int r = rnd.Next(5, 50);
                 _objs[i] = new Star(new Point(800, rnd.Next(0, Game.Height)), new Point(-r, r), new Size(3, 3));
             }
+
             for (var i = 0; i < _asteroids.Length; i++)
             {
                 int r = rnd.Next(5, 50);
                 _asteroids[i] = new Asteroid(new Point(800, rnd.Next(0, Game.Height)), new Point(-r / 5, r), new
                     Size(r, r));
             }
+
+            for (var i = 0; i < _healthpacks.Length; i++)
+            {
+                int r = rnd.Next(5, 50);
+                _healthpacks[i] = new Healthpack(new Point(800, rnd.Next(0, Game.Height)), new Point(-r / 5, r), new
+                    Size(r, r));
+            }
+
+
         }
 
         /// <summary>
