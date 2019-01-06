@@ -9,17 +9,6 @@ namespace AsteroidsGame
     class Ship : BaseObject
     {
         /// <summary>
-        /// конструктор создания корабля
-        /// </summary>
-        /// <param name="pos"></param>
-        /// <param name="dir"></param>
-        /// <param name="size"></param>
-        public Ship(Point pos, Point dir, Size size) : base(pos, dir, size)
-        {
-        }
-
-
-        /// <summary>
         /// Энергия корабля
         /// </summary>
         private int _energy = 100;
@@ -30,6 +19,18 @@ namespace AsteroidsGame
         /// </summary>
         private int _bonus = 0;
         public int Bonus => _bonus;
+
+        /// <summary>
+        /// конструктор создания корабля
+        /// </summary>
+        /// <param name="pos"></param>
+        /// <param name="dir"></param>
+        /// <param name="size"></param>
+        public Ship(Point pos, Point dir, Size size) : base(pos, dir, size)
+        {
+        }
+   
+        
 
         /// <summary>
         ///  event Die starship
@@ -90,7 +91,6 @@ namespace AsteroidsGame
 
         public override void Update()
         {
-            //
         }
 
         /// <summary>
@@ -104,10 +104,10 @@ namespace AsteroidsGame
         /// <summary>
         /// сдвинуть вниз позицию корабля
         /// </summary>
-        //        public void Down()
-        //        {
-        //            if (Pos.Y < Game.Height) Pos.Y = Pos.Y + Dir.Y;
-        //        }
+        public void Down()
+        {
+            if (Pos.Y < Game.Height) Pos.Y = Pos.Y + Dir.Y;
+        }
 
         /// <summary>
         /// Когда корабль погибает вызываем событие Die starship 
