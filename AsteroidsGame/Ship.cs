@@ -73,7 +73,7 @@ namespace AsteroidsGame
         /// <summary>
         /// Когда корабль теряет энергию вызываем это событие:
         /// </summary>
-        public void LooseEnerg()
+        public void LEnergy()
         {
             LooseEnergy?.Invoke();
             //Console.WriteLine("Starship died!");

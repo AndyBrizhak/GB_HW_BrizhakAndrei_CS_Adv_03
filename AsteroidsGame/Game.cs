@@ -77,13 +77,6 @@ namespace AsteroidsGame
             Bullet.MessageBulletDestroyed += BulletMessageDestroyed;
         }
 
-        //private static void NewMethod()
-        //{
-        //   Timer timer = new Timer {Interval = 100};
-        //    timer.Start();
-        //    timer.Tick += Timer_Tick;
-        //}
-
         /// <summary>
         /// обработка событий Ctrl создаем снаряд, Up -сдвиг корабля вверх, Down -сдвиг корабля вниз+
         /// </summary>
@@ -116,12 +109,6 @@ namespace AsteroidsGame
         /// </summary>
         public static void Draw() //+
         {
-            // Проверяем вывод графики
-            // Buffer.Graphics.Clear(Color.Black);
-            // Buffer.Graphics.DrawRectangle(Pens.White, new Rectangle(100, 100, 200, 200));
-            // Buffer.Graphics.FillEllipse(Brushes.Wheat, new Rectangle(100, 100, 200, 200));
-            // Buffer.Render();
-
             Buffer.Graphics.Clear(Color.Black);
             foreach (BaseObject obj in _objs)
                 obj.Draw();
@@ -158,13 +145,6 @@ namespace AsteroidsGame
                 _asteroids[i] = new Asteroid(new Point(800, rnd.Next(0, Game.Height)), new Point(-r / 5, r), new
                     Size(r, r));
             }
-
-            // for (int i = 0; i < _objs.Length / 3; i++)
-            //    _objs[i] = new Planet(new Point(600, i * 20), new Point(-i, -i), new Size(10, 10));
-            //for (int i = _objs.Length / 3; i < _objs.Length / 3 * 2; i++)
-            //    _objs[i] = new Star(new Point(600, i * 20), new Point(-i, 0), new Size(10, 10));
-            // for (int i = _objs.Length / 3 * 2; i < _objs.Length; i++)
-            //     _objs[i] = new SmallRedStar(new Point(600, i * 20), new Point(-i, 0), new Size(5, 5));
         }
 
         /// <summary>
@@ -177,26 +157,14 @@ namespace AsteroidsGame
 
             _bullet?.Update(); //+
 
-            //  foreach (Asteroid a in _asteroids)
-            //   {
-            //
-            //       if (a.Collision(_bullet))
-            //       {
-            //          System.Media.SystemSounds.Hand.Play();   // подать звуковой сигнал
-            //          a.Crash();                               //изменить положение обьекта   
-            //          _bullet.Crash();                         //изменить положение обьекта    
-            //       }
-            //      a.Update();
-            //  }
-
             for (var i = 0; i < _asteroids.Length; i++)    //+
             {
                 if (_asteroids[i] == null) continue;    //+
                 _asteroids[i].Update();                 //+
                 if (_bullet != null && _bullet.Collision(_asteroids[i])) //+
                 {
-                    _bullet.MessageDestroyed();
-                    System.Media.SystemSounds.Hand.Play();              //+
+                   _bullet.MessageDestroyed();
+                   System.Media.SystemSounds.Hand.Play();              //+
                     _asteroids[i] = null;                               //+
                     _bullet = null;
                     continue;                                           //+
@@ -221,11 +189,9 @@ namespace AsteroidsGame
         {
             if (width <= 0 || height <= 0 || width > MaxW || height > MaxH)
             {
-                throw new ArgumentOutOfRangeException();   //выбросить исключение
+                throw new ArgumentOutOfRangeException();   
 
             }
-
-
         }
 
         /// <summary>
@@ -246,7 +212,7 @@ namespace AsteroidsGame
         /// </summary>
         public static  void BulletMessageDestroyed()
         {
-             Console.WriteLine("Bullet Destroyed!");  //выводим сообщение в консоль
+             Console.WriteLine("Bullet Destroyed!");  
         }
 
     }
