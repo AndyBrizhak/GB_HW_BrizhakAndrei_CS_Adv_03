@@ -187,10 +187,10 @@ namespace AsteroidsGame
         /// </summary>
         public static void Update()
         {
-            foreach (BaseObject obj in _objs)
-                obj.Update();
+            foreach (BaseObject obj in _objs) //+
+                obj.Update();      //+
 
-            _bullet.Update();
+            _bullet?.Update(); //+
 
             //  foreach (Asteroid a in _asteroids)
             //   {
@@ -204,22 +204,22 @@ namespace AsteroidsGame
             //      a.Update();
             //  }
 
-            for (var i = 0; i < _asteroids.Length; i++)
+            for (var i = 0; i < _asteroids.Length; i++)    //+
             {
-                if (_asteroids[i] == null) continue;
-                _asteroids[i].Update();
-                if (_bullet != null && _bullet.Collision(_asteroids[i]))
+                if (_asteroids[i] == null) continue;    //+
+                _asteroids[i].Update();                 //+
+                if (_bullet != null && _bullet.Collision(_asteroids[i])) //+
                 {
-                    System.Media.SystemSounds.Hand.Play();
-                    _asteroids[i] = null;
-                    _bullet = null;
-                    continue;
+                    System.Media.SystemSounds.Hand.Play();              //+
+                    _asteroids[i] = null;                               //+
+                    _bullet = null;                                     //+    
+                    continue;                                           //+
                 }
-                if (!_ship.Collision(_asteroids[i])) continue;
-                var rnd = new Random();
-                _ship?.EnergyLow(rnd.Next(1, 10));
-                System.Media.SystemSounds.Asterisk.Play();
-                if (_ship.Energy <= 0) _ship?.Die();
+                if (!_ship.Collision(_asteroids[i])) continue;          //+
+                var rnd = new Random();                                 //+
+                _ship?.EnergyLow(rnd.Next(1, 10));                      //+
+                System.Media.SystemSounds.Asterisk.Play();              //+    
+                if (_ship.Energy <= 0) _ship?.Die();                    //+
             }
 
 
