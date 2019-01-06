@@ -100,7 +100,7 @@ namespace AsteroidsGame
         //}
 
         /// <summary>
-        /// обработка событий Ctrl создаем снаряд, Up -сдвиг корабля вверх, Down -сдвиг корабля вниз
+        /// обработка событий Ctrl создаем снаряд, Up -сдвиг корабля вверх, Down -сдвиг корабля вниз+
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
