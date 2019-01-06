@@ -16,12 +16,12 @@ namespace AsteroidsGame
         /// <summary>
         /// статический таймер для класса Game
         /// </summary>
-        private static Timer _timer = new Timer();
+        private static Timer _timer = new Timer(); //+
 
         /// <summary>
         /// Генератор случайных чисел
         /// </summary>
-        public static Random Rnd = new Random();
+        public static Random Rnd = new Random(); //+
 
         // Свойства
         // Ширина и высота игрового поля
@@ -85,7 +85,7 @@ namespace AsteroidsGame
             Load();
             _timer.Start();
             _timer.Tick += Timer_Tick;
-            //NewMethod();
+          
 
             //учет нажатия на клавишы+
             form.KeyDown += Form_KeyDown;
