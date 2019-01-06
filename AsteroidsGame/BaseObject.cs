@@ -27,7 +27,10 @@ namespace AsteroidsGame
             Size = size;
         }
 
-        public delegate void Message();
+        /// <summary>
+        /// делегат вывода сообщений
+        /// </summary>
+        public delegate void Message();  //+
 
         /// <summary>
         /// рисует  обьекты
