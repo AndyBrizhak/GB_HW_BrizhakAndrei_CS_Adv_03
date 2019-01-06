@@ -118,6 +118,13 @@ namespace AsteroidsGame
             Console.WriteLine("Starship died!"); // Вывод сообщения в консоль
         }
 
+        public static void ShowMessageShipLooseEnergy()
+        {
+            Console.WriteLine("Starship loosing energy!!!");
+            //StreamWriter.WriteLine("Starship loosing energy!!!");
+
+
+        }
     }
 }
 

@@ -74,8 +74,8 @@ namespace AsteroidsGame
             _timer.Tick += Timer_Tick;
             form.KeyDown += Form_KeyDown;
             Ship.MessageDie += Finish;
-            Bullet.MessageBulletDestroyed += Bullet.ShowMessageBulletDestroyed; 
-
+            Bullet.MessageBulletDestroyed += Bullet.ShowMessageBulletDestroyed;
+            Ship.LooseEnergy += Ship.ShowMessageShipLooseEnergy;
         }
 
         /// <summary>
@@ -170,7 +170,8 @@ namespace AsteroidsGame
                     _bullet = null;
                     continue;                                           //+
                 }
-                if (!_ship.Collision(_asteroids[i])) continue;          //+
+                if (!_ship.Collision(_asteroids[i])) continue;
+                _ship.LEnergy();
                 var rnd = new Random();                                 //+
                 _ship?.EnergyLow(rnd.Next(1, 10));                      //+
                 System.Media.SystemSounds.Asterisk.Play();              //+    
