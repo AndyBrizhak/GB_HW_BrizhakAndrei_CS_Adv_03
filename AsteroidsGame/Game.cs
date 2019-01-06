@@ -136,6 +136,7 @@ namespace AsteroidsGame
             _objs = new BaseObject[30];
            // _bullet = new Bullet(new Point(0, 200), new Point(5, 0), new Size(4, 1));
             _asteroids = new Asteroid[3];
+            _healthpacks = new Healthpack[3];
             var rnd = new Random();
             for (var i = 0; i < _objs.Length; i++)
             {
