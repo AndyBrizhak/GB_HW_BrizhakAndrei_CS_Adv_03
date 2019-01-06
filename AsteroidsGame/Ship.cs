@@ -114,7 +114,7 @@ namespace AsteroidsGame
         /// </summary>
         public void Die()
         {
-            //            MessageDie?.Invoke();
+            MessageDie?.Invoke();   //+
             //            Console.WriteLine("Starship died!");
         }
 
