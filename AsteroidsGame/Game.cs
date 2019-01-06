@@ -245,9 +245,9 @@ namespace AsteroidsGame
         /// <summary>
         /// Метод завершение игры
         /// </summary>
-        public static void Finish()
+        public static void   //+
         {
-            Console.WriteLine("The End");
+//            Console.WriteLine("The End");
             _timer.Stop();
             Buffer.Graphics.DrawString("The End", new Font(FontFamily.GenericSansSerif, 60,
                 FontStyle.Underline), Brushes.White, 200, 100);
