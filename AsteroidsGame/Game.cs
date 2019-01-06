@@ -40,7 +40,7 @@ namespace AsteroidsGame
         /// <summary>
         /// Обьект типа Bullet
         /// </summary>
-        private static Bullet _bullet;
+//        private static Bullet _bullet;
 
         /// <summary>
         /// массив объектов Asteroid
