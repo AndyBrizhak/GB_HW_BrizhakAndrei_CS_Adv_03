@@ -181,6 +181,7 @@ namespace AsteroidsGame
                 _asteroids[i].Update();                 //+
                 if (_bullet != null && _bullet.Collision(_asteroids[i])) //+
                 {
+                    _ship.BonusPlus(Rnd.Next(1,10));
                    _bullet.MessageDestroyed();
                    System.Media.SystemSounds.Hand.Play();              //+
                     _asteroids[i] = null;                               //+
