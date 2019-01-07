@@ -125,7 +125,7 @@ namespace AsteroidsGame
             _ship?.Draw();
             if (_ship != null)
                 Buffer.Graphics.DrawString("Energy:" + _ship.Energy, SystemFonts.DefaultFont, Brushes.White, 0, 0);
-
+                Buffer.Graphics.DrawString("Bonus:" + _ship.Bonus, SystemFonts.DefaultFont, Brushes.YellowGreen, 100, 0);
             foreach (Healthpack obj in _healthpacks)
                 obj?.Draw();
 

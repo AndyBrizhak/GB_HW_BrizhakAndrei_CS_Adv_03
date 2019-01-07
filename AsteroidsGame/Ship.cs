@@ -15,7 +15,7 @@ namespace AsteroidsGame
         public int Energy => _energy;
 
         /// <summary>
-        /// init bonus energy
+        /// init bonus 
         /// </summary>
         private int _bonus = 0;
         public int Bonus => _bonus;
