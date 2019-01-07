@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
+using System.IO; // для работы с потоками ввода-вывода
+
 //Брижак Андрей Домашнее задание по курсу C# уровень 2 урок 3
 
 namespace AsteroidsGame
@@ -53,6 +55,8 @@ namespace AsteroidsGame
         private static Ship _ship = new Ship(new Point(10, 400), new Point(5, 5), new Size(10, 10));
 
         private static Healthpack[] _healthpacks;
+        
+
 
         static Game()
         {
@@ -138,7 +142,6 @@ namespace AsteroidsGame
         public static void Load()
         {
             _objs = new BaseObject[30];
-           // _bullet = new Bullet(new Point(0, 200), new Point(5, 0), new Size(4, 1));
             _asteroids = new Asteroid[3];
             _healthpacks = new Healthpack[3];
             var rnd = new Random();
@@ -207,11 +210,7 @@ namespace AsteroidsGame
                   _ship?.EnergyHigh(rnd.Next(1, 10));
                   System.Media.SystemSounds.Asterisk.Play();
                   _healthpacks[i] = null;
-                  /*continue; */ 
                 }
-               
-                       
-                /*if (_ship.Energy <= 0) _ship?.Die(); */         
             }
 
 
@@ -243,15 +242,5 @@ namespace AsteroidsGame
                 FontStyle.Underline), Brushes.White, 200, 100);
             Buffer.Render();
         }
-
-
-//        /// <summary>
-//        /// Метод вывода сообщения о разрушении пули
-//        /// </summary>
-//        public static  void BulletMessageDestroyed()
-//        {
-//             Console.WriteLine("Bullet Destroyed!");  
-//        }
-
     }
 }

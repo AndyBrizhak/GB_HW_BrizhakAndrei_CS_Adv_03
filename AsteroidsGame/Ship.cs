@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 //Брижак Андрей Домашнее задание к уроку 3 Продвинутый курс C#
 
@@ -136,16 +137,11 @@ namespace AsteroidsGame
         public static void ShowMessageShipLooseEnergy()
         {
             Console.WriteLine("Starship loosing energy!!!");
-            //StreamWriter.WriteLine("Starship loosing energy!!!");
-
-
         }
 
         public static void ShowMessageShipAddEnergy()
         {
             Console.WriteLine("Starship add energy!!!");
-            //StreamWriter.WriteLine("Starship loosing energy!!!");
-            
         }
 
     }

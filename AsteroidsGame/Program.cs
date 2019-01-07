@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 //Брижак Андрей Домашнее задание по курсу C# уровень 2 урок 3
 
@@ -21,6 +22,7 @@ namespace AsteroidsGame
             //     Width = Screen.PrimaryScreen.Bounds.Width,
             //     Height = Screen.PrimaryScreen.Bounds.Height
             // };
+            StreamWriter fileOut = new StreamWriter("t.txt", true);
             Game.Init(form);
             form.Show();
             Game.Load();

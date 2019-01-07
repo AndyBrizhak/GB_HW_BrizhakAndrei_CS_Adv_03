@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 //Брижак Андрей Домашнее задание по курсу C# уровень 2 урок 3
 
 namespace AsteroidsGame
@@ -41,7 +42,6 @@ namespace AsteroidsGame
         public void MessageDestroyed()    
         {
             MessageBulletDestroyed?.Invoke(); // Когда пуля разрушается вызываем это событие
-           // Console.WriteLine("Bullet Destroyed!");  //выводим сообщение в консоль
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace AsteroidsGame
         /// </summary>
         public static void ShowMessageBulletDestroyed()  
         {
-            Console.WriteLine("Bullet destoeyd");
+            Console.WriteLine("Bullet destroeyd");
         }
     }
 }
