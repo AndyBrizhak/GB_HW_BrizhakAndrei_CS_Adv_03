@@ -11,7 +11,7 @@ namespace AsteroidsGame
     {
         public Healthpack(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
-            Power = -10;
+           // Power = -10;
         }
 
         public override void Draw()

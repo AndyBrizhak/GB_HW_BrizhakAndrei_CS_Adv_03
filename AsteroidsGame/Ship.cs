@@ -43,6 +43,12 @@ namespace AsteroidsGame
         public static event Message LooseEnergy;
 
         /// <summary>
+        /// событие (делегат) добавление энергии корабля
+        /// </summary>
+        public static event Message AddEnergy;
+
+
+        /// <summary>
         /// add bonus energy
         /// </summary>
         /// <param name="n"></param>
@@ -76,7 +82,16 @@ namespace AsteroidsGame
         public void LEnergy()
         {
             LooseEnergy?.Invoke();
-            //Console.WriteLine("Starship died!");
+            
+        }
+
+        /// <summary>
+        /// Когда корабль добавляет энергию вызываем это событие:
+        /// </summary>
+        public void AEnergy()
+        {
+            AddEnergy?.Invoke();
+            
         }
 
         /// <summary>
@@ -125,6 +140,14 @@ namespace AsteroidsGame
 
 
         }
+
+        public static void ShowMessageShipAddEnergy()
+        {
+            Console.WriteLine("Starship add energy!!!");
+            //StreamWriter.WriteLine("Starship loosing energy!!!");
+            
+        }
+
     }
 }
 
