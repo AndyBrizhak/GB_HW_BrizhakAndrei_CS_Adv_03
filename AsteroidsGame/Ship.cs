@@ -132,16 +132,20 @@ namespace AsteroidsGame
         {
             MessageDie?.Invoke();   //+
             Console.WriteLine("Starship died!"); // Вывод сообщения в консоль
+            Game.MessageToFile(" Starship died! ");
+
         }
 
         public static void ShowMessageShipLooseEnergy()
         {
             Console.WriteLine("Starship loosing energy!!!");
+            Game.MessageToFile(" Starship loosing energy!!! ");
         }
 
         public static void ShowMessageShipAddEnergy()
         {
             Console.WriteLine("Starship add energy!!!");
+            Game.MessageToFile(" Starship add energy!!! ");
         }
 
     }

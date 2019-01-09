@@ -254,7 +254,7 @@ namespace AsteroidsGame
         {
             try
             {
-                fileOut.WriteLine(msg);
+                fileOut?.WriteLine(msg);
 
             }
             catch (Exception e)

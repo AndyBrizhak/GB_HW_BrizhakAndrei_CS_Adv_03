@@ -58,6 +58,7 @@ namespace AsteroidsGame
         public static void ShowMessageBulletDestroyed()  
         {
             Console.WriteLine("Bullet destroeyd");
+            Game.MessageToFile("Bullet destroeyd");
         }
     }
 }
