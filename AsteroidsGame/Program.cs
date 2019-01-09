@@ -22,7 +22,7 @@ namespace AsteroidsGame
             //     Width = Screen.PrimaryScreen.Bounds.Width,
             //     Height = Screen.PrimaryScreen.Bounds.Height
             // };
-            StreamWriter fileOut = new StreamWriter("t.txt", true);
+           
             Game.Init(form);
             form.Show();
             Game.Load();

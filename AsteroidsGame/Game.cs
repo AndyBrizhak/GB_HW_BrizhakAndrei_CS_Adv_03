@@ -55,7 +55,7 @@ namespace AsteroidsGame
         private static Ship _ship = new Ship(new Point(10, 400), new Point(5, 5), new Size(10, 10));
 
         private static Healthpack[] _healthpacks;
-        
+        static StreamWriter fileOut = new StreamWriter("t.txt", true);
 
 
         static Game()
@@ -83,6 +83,8 @@ namespace AsteroidsGame
             Bullet.MessageBulletDestroyed += Bullet.ShowMessageBulletDestroyed;
             Ship.LooseEnergy += Ship.ShowMessageShipLooseEnergy;
             Ship.AddEnergy += Ship.ShowMessageShipAddEnergy;
+
+            
         }
 
         /// <summary>
@@ -241,6 +243,25 @@ namespace AsteroidsGame
             Buffer.Graphics.DrawString("The End", new Font(FontFamily.GenericSansSerif, 60,
                 FontStyle.Underline), Brushes.White, 200, 100);
             Buffer.Render();
+            fileOut?.Close();
+        }
+
+        /// <summary>
+        /// Запись сообщения в файл t.txt
+        /// </summary>
+        /// <param name="msg"></param>
+        public static void MessageToFile(string msg)
+        {
+            try
+            {
+                fileOut.WriteLine(msg);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
